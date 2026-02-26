@@ -1,0 +1,42 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+resnet_cifar10/
+env/
+venv/
+.conda/
+
+# 数据集
+data/
+*.tar.gz
+*.zip
+
+# 模型权重
+work_dirs/
+*.pth
+*.ckpt
+
+# 日志（仅忽略work_dirs下的日志，保留手动创建的训练日志）
+work_dirs/logs/
+*.log
+
+# Windows 临时文件
+Thumbs.db
+.DS_Store
+*.tmp
+
+# IDE 配置
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 训练日志白名单（强制保留docs文件夹及所有内容）
+!docs/
+!docs/**/*

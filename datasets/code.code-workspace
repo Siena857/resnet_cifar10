@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../rilab_resnet18"
+		}
+	],
+	"settings": {}
+}
