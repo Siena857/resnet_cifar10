@@ -4,7 +4,7 @@ import logging
 from utils.config import CONFIG
 
 def init_logger():
-    """初始化日志：保存到文件+控制台输出，只保留最新2个日志（学长要求）"""
+    """初始化日志：保存到文件+控制台输出，只保留最新2个日志"""
     # 清理旧日志（只保留最新2个）
     log_files = sorted(glob.glob(os.path.join(CONFIG["path"]["log_path"], "*.log")))
     if len(log_files) > 2:
