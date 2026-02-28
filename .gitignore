@@ -15,7 +15,6 @@ data/
 *.zip
 
 # 模型权重
-work_dirs/
 *.pth
 *.ckpt
 
