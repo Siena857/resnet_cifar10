@@ -19,10 +19,6 @@ work_dirs/
 *.pth
 *.ckpt
 
-# 日志（仅忽略work_dirs下的日志，保留手动创建的训练日志）
-work_dirs/logs/
-*.log
-
 # Windows 临时文件
 Thumbs.db
 .DS_Store

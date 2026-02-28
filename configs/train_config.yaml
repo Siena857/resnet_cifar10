@@ -1,28 +1,28 @@
 # 模型配置
 model:
-  name: "resnet18"                # 可选 resnet18 / resnet34
+  name: "resnet34"                # 可选 resnet18 / resnet34
   num_classes: 10                 # CIFAR-10 固定为10类
-  pretrained: False                # 是否加载官方预训练权重
+  pretrained: True                # 是否加载官方预训练权重
   weight_path: ""                 # 自定义权重路径（训练后填写）
-  freeze_backbone: False           # 是否启用backbone冻结（配合下方参数）
+  freeze_backbone: True           # 是否启用backbone冻结（配合下方参数）
   freeze_layers: "backbone"       # 冻结范围：backbone（仅骨干）/ all（全模型，除fc）
   unfreeze_layers: ["fc"]         # 强制不冻结的层（优先级最高）
   freeze_bn: False                # 是否冻结BN层（建议False，保证归一化效果）
 
 # 训练超参数
 train:
-  epochs: 10                      # 训练总轮数
-  batch_size: 16                  # 批次大小
+  epochs: 100                      # 训练总轮数
+  batch_size: 128                  # 批次大小
   lr: 0.001                       # 初始学习率
   weight_decay: 0.0001            # L2 正则化
-  device: "cpu"                   # 训练设备（cuda/cpu）
+  device: "cuda"                   # 训练设备（cuda/cpu）
   save_interval: 10               # 每10轮保存一次模型
   early_stop_patience: 15         # 早停耐心值
-  freeze_backbone_epochs: 5       # 冻结backbone训练轮数（前5轮冻结，后5轮解冻）
-  unfreeze_lr: 0.0001             # 解冻backbone后的学习率（建议比初始小10倍）
+  freeze_backbone_epochs: 20       # 冻结backbone训练轮数（前5轮冻结，后5轮解冻）
+  unfreeze_lr: 0.00005             # 解冻backbone后的学习率（建议比初始小10倍）
 
 # 路径配置
 path:
   data_path: "./data"                  # 数据集保存路径
-  output_path: "./work_dirs/resnet18"  # 模型权重输出路径
+  output_path: "./work_dirs/resnet34"  # 模型权重输出路径
   log_path: "./work_dirs/logs"         # 日志保存路径
